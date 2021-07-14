@@ -1,0 +1,21 @@
+<?php
+function getLargest($array, $max, $index, &$result){
+	if(count($array) < $index+1) return;
+	if($max < $array[$index]){
+		
+	   $max = $array[$index];
+	   $result =  $max;
+		
+	}else{
+		$result =  $max;
+		getLargest($array, $max, $index+1, $result);	
+	}
+	
+	getLargest($array, $max, $index+1, $result);
+}
+
+
+$array = array(8, 5, 7, 1, 4,6);
+getLargest($array, $array[0], 1, $result);
+echo $result;
+?>
